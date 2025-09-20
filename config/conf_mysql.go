@@ -1,6 +1,11 @@
 package config
 
-import "strconv"
+import (
+	"strconv"
+	"strings"
+
+	"gorm.io/gorm/logger"
+)
 
 // Mysql 数据库配置
 type Mysql struct {
@@ -17,4 +22,19 @@ type Mysql struct {
 
 func (m Mysql) Dsn() string {
 	return m.Username + ":" + m.Password + "@tcp(" + m.Host + ":" + strconv.Itoa(m.Port) + ")/" + m.DBName + "?" + m.Config
+}
+
+func (m Mysql) LogLevel() logger.LogLevel {
+	switch strings.ToLower(m.LogMode) {
+	case "silent", "Silent":
+		return logger.Silent
+	case "error", "Error":
+		return logger.Error
+	case "warn", "Warn":
+		return logger.Warn
+	case "info", "Info":
+		return logger.Info
+	default:
+		return logger.Info
+	}
 }

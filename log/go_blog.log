@@ -1,0 +1,5 @@
+{"level":"INFO","time":"2025-09-20T22:56:14.679+0800","caller":"core/server.go:18","msg":"server run success on ","address":"0.0.0.0:8080"}
+{"level":"ERROR","time":"2025-09-20T23:23:07.889+0800","caller":"initialize/gorm.go:22","msg":"Failed to connect to MySQL:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)"}
+{"level":"ERROR","time":"2025-09-20T23:24:47.678+0800","caller":"initialize/gorm.go:22","msg":"Failed to connect to MySQL:","error":"Error 1049 (42000): Unknown database 'blog_db'"}
+{"level":"INFO","time":"2025-09-20T23:25:03.800+0800","caller":"core/server.go:18","msg":"server run success on ","address":"0.0.0.0:8080"}
+{"level":"INFO","time":"2025-09-20T23:25:03.800+0800","caller":"initialize/cron.go:18","msg":"start","keysAndValues":null}
